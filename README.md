@@ -37,12 +37,18 @@ go get github.com/crazywolf132/conduit   # Your journey begins here!
 package main
 
 import (
+    "context"
     "fmt"
+    "os/signal"
     "github.com/crazywolf132/conduit"
     "github.com/crazywolf132/conduit/server"
 )
 
 func main() {
+    // Create a context that will be canceled on interrupt
+    ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
+    defer stop()
+
     cfg := conduit.DefaultServerConfig("/tmp/app.sock")
     s := server.NewServer(cfg)
 
@@ -63,8 +69,8 @@ func main() {
     }
     defer s.Stop()
 
-    // Block until interrupted
-    select {}
+    // Wait for interrupt signal
+    <-ctx.Done()
 }
 ```
 

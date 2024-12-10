@@ -166,9 +166,7 @@ A: We've got your back! While it's open-source (free as in both beer AND speech 
 ## 🤝 Join the Fun!
 
 - 📚 [Docs](https://godoc.org/github.com/crazywolf132/conduit) (Actually readable!)
-- 💬 [Discord](https://discord.gg/conduit) (Come chat with us!)
 - 🐛 [Issues](https://github.com/crazywolf132/conduit/issues) (Found a bug? Let's squash it!)
-- 📝 [Blog](https://conduit.dev/blog) (Cool stories about cool code)
 
 ## 📜 License
 
